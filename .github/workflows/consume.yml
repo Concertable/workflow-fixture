@@ -9,23 +9,23 @@ permissions:
 
 jobs:
   dotnet:
-    uses: Concertable/.github/.github/workflows/dotnet-ci.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/dotnet-ci.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {solution: dotnet/Fixture.csproj, run-tests: false}
     permissions: {contents: read, packages: read}
   node:
-    uses: Concertable/.github/.github/workflows/node-ci.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/node-ci.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {working-directory: node}
     permissions: {contents: read, packages: read}
   nuget:
-    uses: Concertable/.github/.github/workflows/nuget-publish.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/nuget-publish.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {project: dotnet/Fixture.csproj, publish: false}
     permissions: {contents: read, packages: write, id-token: write, attestations: write}
   npm:
-    uses: Concertable/.github/.github/workflows/npm-publish.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/npm-publish.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {working-directory: node, publish: false}
     permissions: {contents: read, packages: write, id-token: write, attestations: write}
   container:
-    uses: Concertable/.github/.github/workflows/container-publish.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/container-publish.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with:
       image: ghcr.io/concertable/workflow-fixture
       version: 0.0.1
@@ -34,27 +34,27 @@ jobs:
       publish: false
     permissions: {contents: read, packages: write, id-token: write, attestations: write}
   apphost:
-    uses: Concertable/.github/.github/workflows/apphost-smoke.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/apphost-smoke.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {project: apphost/AppHost.csproj, health-url: 'http://localhost:8080/health'}
     permissions: {contents: read, packages: read}
   terraform:
-    uses: Concertable/.github/.github/workflows/terraform-ci.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/terraform-ci.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {working-directory: terraform, run-plan: false, apply: false}
     permissions: {contents: read, id-token: write}
   compatibility:
-    uses: Concertable/.github/.github/workflows/compatibility-manifest.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/compatibility-manifest.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {manifest: manifests/compatibility-manifest.json}
     permissions: {contents: read}
   configuration:
-    uses: Concertable/.github/.github/workflows/configuration-manifest.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/configuration-manifest.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {manifest: manifests/environment-manifest.json, app-configuration: manifests/app-configuration.json}
     permissions: {contents: read}
   promotion:
-    uses: Concertable/.github/.github/workflows/configuration-promotion.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/configuration-promotion.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {promotion: manifests/promotion.json, compatibility-manifest: manifests/compatibility-manifest.json}
     permissions: {contents: read}
   rollback:
-    uses: Concertable/.github/.github/workflows/configuration-rollback.yml@829387ce2805b0460214a784714aca01ff64f94b
+    uses: Concertable/.github/.github/workflows/configuration-rollback.yml@68bdd0430a9771cf64ad266f0fdd6b1b1652f608
     with: {rollback: manifests/rollback.json, target-manifest: manifests/environment-manifest.json}
     permissions: {contents: read}
 
