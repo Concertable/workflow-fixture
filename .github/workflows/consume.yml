@@ -19,11 +19,11 @@ jobs:
   nuget:
     uses: Concertable/.github/.github/workflows/nuget-publish.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with: {project: dotnet/Fixture.csproj, publish: false}
-    permissions: {contents: read, packages: read}
+    permissions: {contents: read, packages: write, id-token: write, attestations: write}
   npm:
     uses: Concertable/.github/.github/workflows/npm-publish.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with: {working-directory: node, publish: false}
-    permissions: {contents: read, packages: read}
+    permissions: {contents: read, packages: write, id-token: write, attestations: write}
   container:
     uses: Concertable/.github/.github/workflows/container-publish.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with:
@@ -32,7 +32,7 @@ jobs:
       context: container
       dockerfile: container/Dockerfile
       publish: false
-    permissions: {contents: read, packages: read}
+    permissions: {contents: read, packages: write, id-token: write, attestations: write}
   apphost:
     uses: Concertable/.github/.github/workflows/apphost-smoke.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with: {project: apphost/AppHost.csproj, health-url: 'http://localhost:8080/health'}
@@ -40,7 +40,7 @@ jobs:
   terraform:
     uses: Concertable/.github/.github/workflows/terraform-ci.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with: {working-directory: terraform, run-plan: false, apply: false}
-    permissions: {contents: read}
+    permissions: {contents: read, id-token: write}
   compatibility:
     uses: Concertable/.github/.github/workflows/compatibility-manifest.yml@40e6cb9739c76023442f67298ba9f467bc9840a8
     with: {manifest: manifests/compatibility-manifest.json}
