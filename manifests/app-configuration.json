@@ -1,0 +1,4 @@
+[
+  {"key": "Concertable:Feature", "value": "fixture"},
+  {"key": "Concertable:Credential", "keyVaultReference": "https://fixture.vault.azure.net/secrets/credential/aaaaaaaa"}
+]

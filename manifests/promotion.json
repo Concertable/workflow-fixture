@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "environment": "test",
+  "compatibilityCommit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "steps": ["verify-infrastructure", "migrate", "rollout", "health", "smoke"],
+  "rollbackManifest": "manifests/rollback.json"
+}

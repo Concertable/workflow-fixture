@@ -1,0 +1,7 @@
+{
+  "schemaVersion": 1,
+  "environment": "test",
+  "targetCompatibilityCommit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "reason": "Checkpoint fixture",
+  "runbook": "https://github.com/Concertable/docs"
+}

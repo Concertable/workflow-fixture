@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "qualification": {
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "runUrl": "https://github.com/Concertable/workflow-fixture/actions/runs/1"
+  },
+  "images": ["ghcr.io/concertable/workflow-fixture:0.0.1@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+  "packages": ["nuget:Concertable.WorkflowFixture@0.0.1", "npm:@concertable/workflow-fixture@0.0.1"]
+}

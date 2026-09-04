@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "environment": "test",
+  "compatibility": {"commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"},
+  "images": ["ghcr.io/concertable/workflow-fixture:0.0.1@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"]
+}
